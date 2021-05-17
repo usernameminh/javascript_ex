@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 02</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        .gap-2 {
+            row-gap: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        .grid-item {
+            background-color: rgb(214 214 214);
+            padding: 0 30px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .form-input {
+            flex: 1;
+            outline: none;
+            border: 1px solid rgb(158, 158, 248);
+            padding: 8px 8px;
+            border-radius: 4px;
+        }
+
+        .form-label {
+            width: 200px;
+        }
+
+        .unit-label {
+            width: 50px;
+        }
+
+        .program-form {
+            background-color: rgb(103 103 103);
+            padding: 16px 60px;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container"> 
+        <div class="row">
+            <div class="col-10 offset-1">
+                <!-- form -->
+                <form action="" class="program-form">
+                    <h1 class="title text-light mb-4 pt-4 pb-2">Chương Trình In Lịch Trả Tiền</h1>
+                    <div class="grid-container gap-2 mb-4">
+                        <div class="grid-item">
+                            <div class="form-group">
+                                <label class="form-label">Số tiền vay: </label>
+                                <input id="loan" type="number" class="form-input" placeholder="Nhập số tiền...">
+                                <span class="ml-2 unit-label">VND</span>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="form-group">
+                                <label class="form-label">Thời gian vay: </label>
+                                <input id="borrowedTime" type="number" class="form-input" placeholder="số tháng..">
+                                <span class="ml-2 unit-label">tháng</span>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="form-group">
+                                <label class="form-label">Lãi suất: </label>
+                                <input id="interestRate" type="number" class="form-input" placeholder="lãi suất...">
+                                <span class="ml-2 unit-label">% năm</span>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="form-group">
+                                <label class="form-label">Ngày giải ngân: </label>
+                                <input id="disbursementDate" type="date" class="form-input" placeholder="mm/DD/yyyy">
+                                <span class="ml-2 unit-label"><i class="far fa-calendar-alt"></i></span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-success" id="calculate">Tính</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-4">
+            <h1 class="title text-primary mb-4 pt-4 pb-2">Kết quả</h1>
+            <table id="tableResult" class="table table-striped">
+                <thead class=" bg-success text-light">
+                    <tr>
+                        <th scope="col" colspan="2">Kỳ trả nợ</th>
+                        <th scope="col">Số gốc còn lại</th>
+                        <th scope="col">Gốc</th>
+                        <th scope="col">Lãi</th>
+                        <th scope="col">Tổng gốc + lãi</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <tr>
+                        <!-- <td id="notification" colspan="6"><h2  class="text-center text-dark" >Thực hiện phép tính để có dữ liệu</h2></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
